@@ -22,25 +22,21 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
         >
           Home
         </NavLink>
-        {user.loggedIn && (
-          <>
-            <NavLink
-              to="/my-tiles"
-              className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
-              onClick={toggleMenu}
-            >
-              My Tiles
-            </NavLink>
-            {user.addr === adminAddress && (
-              <NavLink
-                to="/admin"
-                className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
-                onClick={toggleMenu}
-              >
-                Admin
-              </NavLink>
-            )}
-          </>
+        <NavLink
+          to="/mosaic-portal"
+          className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
+          onClick={toggleMenu}
+        >
+          Mosaic Portal
+        </NavLink>
+        {user.loggedIn && user.addr === adminAddress && (
+          <NavLink
+            to="/admin"
+            className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
+            onClick={toggleMenu}
+          >
+            Admin
+          </NavLink>
         )}
       </div>
     </div>

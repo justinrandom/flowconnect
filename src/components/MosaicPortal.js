@@ -9,7 +9,7 @@ import Pagination from "./Pagination";
 const ITEMS_PER_PAGE = 6;
 const CARD_SIZE = { width: "128px", height: "128px" };
 
-function MyTiles() {
+function MosaicPortal() {
   const [selectedTile, setSelectedTile] = useState("");
   const [selectedMoment, setSelectedMoment] = useState("");
   const [newOwnerAddress, setNewOwnerAddress] = useState("");
@@ -196,4 +196,4 @@ function MyTiles() {
   );
 }
 
-export default MyTiles;
+export default MosaicPortal;
