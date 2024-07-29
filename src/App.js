@@ -4,11 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import "./fclConfig";
 
 import Admin from "./components/Admin";
-import MosaicPortal from "./components/MosaicPortal";
-import Mosaic from "./components/Mosaic";
 import Header from "./components/Header";
+import Home from "./components/Home";
+import FlowMosaic from "./components/FlowMosaic";
 import NavigationMenu from "./components/NavigationMenu";
-import UpdateTile from "./components/MosaicPortal"; // Import UpdateTile component
 
 const adminAddress = "0xdbf7a2a1821c9ffa"; // Replace with your actual admin address
 
@@ -53,9 +52,8 @@ function App() {
       >
         <Routes>
           <Route path="/admin" element={<Admin />} />
-          <Route path="/mosaic-portal" element={<MosaicPortal />} />
-          <Route path="/update-tile" element={<UpdateTile />} />
-          <Route path="/" element={<Mosaic />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/flow-mosaic" element={<FlowMosaic />} />
         </Routes>
       </div>
     </div>

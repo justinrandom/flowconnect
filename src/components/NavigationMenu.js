@@ -23,11 +23,11 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
           Home
         </NavLink>
         <NavLink
-          to="/mosaic-portal"
+          to="/flow-mosaic"
           className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
           onClick={toggleMenu}
         >
-          Mosaic Portal
+          FlowMosaic
         </NavLink>
         {user.loggedIn && user.addr === adminAddress && (
           <NavLink

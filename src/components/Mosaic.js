@@ -96,7 +96,7 @@ function Mosaic() {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Mosaic</h2>
+      <h2 className="text-2xl font-semibold mb-4">FlowMosaic</h2>
       <div
         className="relative border-4 border-gray-700 bg-white overflow-hidden"
         style={{ height: "640px", width: "100%", maxWidth: "1280px" }}
