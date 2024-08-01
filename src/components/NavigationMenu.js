@@ -36,6 +36,14 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
         >
           Timeline
         </NavLink>
+        <NavLink
+          to="/blogposts"
+          className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
+          onClick={toggleMenu}
+        >
+          Blog Posts
+        </NavLink>
+
         {user.loggedIn && user.addr === adminAddress && (
           <NavLink
             to="/admin"

@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import FlowMosaic from "./components/FlowMosaic";
 import Timeline from "./components/Timeline";
 import NavigationMenu from "./components/NavigationMenu";
+import BlogPosts from "./components/BlogPosts";
 
 const adminAddress = "0xdbf7a2a1821c9ffa"; // Replace with your actual admin address
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/flow-mosaic" element={<FlowMosaic />} />
           <Route path="/timeline" element={<Timeline />} />
+          <Route path="/blogposts" element={<BlogPosts />} />
         </Routes>
       </div>
     </div>
