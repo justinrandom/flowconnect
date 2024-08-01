@@ -174,8 +174,7 @@ export const contentByYear = {
           {
             type: "3rd Party",
             details: [
-              "Evaluate.market raised $1.6 million in seed funding to build a data analytics platform for NBA Top Shot.",
-              "https://www.coindesk.com/nba-top-shot-data-site-raises-1-6m-to-bring-visibility-to-your-nft-bags",
+              `Evaluate.market raised $1.6 million in seed funding to build a data analytics platform for NBA Top Shot. <a href="https://www.coindesk.com/nba-top-shot-data-site-raises-1-6m-to-bring-visibility-to-your-nft-bags" target="_blank" class="text-blue-500 underline">Read more</a>`,
             ],
           },
         ],

@@ -10,6 +10,7 @@ import evaluate from "../evaluate.png";
 import nflad from "../nflad.png";
 import wnbatopshot from "../wnbatopshot.png";
 import { contentByYear } from "./content";
+import FlowTimeline from "../FlowTimeline.png";
 
 const getIconDetails = (iconType) => {
   switch (iconType) {
@@ -32,8 +33,7 @@ const Timeline = () => {
   const allProjects = ["NBA", "TopShot", "Evaluate", "NFLAD", "WNBATopShot"];
   const [selectedProjects, setSelectedProjects] = useState(allProjects);
 
-  const handleFilterChange = (event) => {
-    const value = event.target.value;
+  const handleFilterChange = (value) => {
     setSelectedProjects((prev) =>
       prev.includes(value)
         ? prev.filter((project) => project !== value)
@@ -41,49 +41,52 @@ const Timeline = () => {
     );
   };
 
-  const handleSelectAllChange = (event) => {
-    if (event.target.checked) {
-      setSelectedProjects(allProjects);
-    } else {
-      setSelectedProjects([]);
-    }
+  const handleSelectAllChange = () => {
+    setSelectedProjects(allProjects);
   };
 
-  useEffect(() => {
-    const allSelected = allProjects.every((project) =>
-      selectedProjects.includes(project)
-    );
-    document.getElementById("selectAll").checked = allSelected;
-  }, [selectedProjects]);
+  const handleUnselectAllChange = () => {
+    setSelectedProjects([]);
+  };
 
   return (
-    <div className="bg-gray-200 p-3">
-      <h1 className="text-3xl font-bold text-center mb-4 text-black">
-        Flow Timeline
-      </h1>
+    <div className="bg-gray-300 p-3">
+      <div className="flex justify-center mb-4">
+        <div className="bg-gray-700 border border-black p-2 rounded-lg">
+          <img src={FlowTimeline} alt="Flow Timeline" className="h-16" />
+        </div>
+      </div>
 
-      <div className="flex justify-center mb-5 space-x-4 flex-wrap">
-        <label className="mx-2 text-black">
-          <input
-            type="checkbox"
-            id="selectAll"
-            onChange={handleSelectAllChange}
-            className="mr-1"
-          />
-          Select All
-        </label>
-        {allProjects.map((project) => (
-          <label key={project} className="mx-2 text-black">
-            <input
-              type="checkbox"
-              value={project}
-              checked={selectedProjects.includes(project)}
-              onChange={handleFilterChange}
-              className="mr-1"
-            />
-            {project}
-          </label>
-        ))}
+      <div className="bg-gray-700 p-4 rounded-lg mb-5">
+        <div className="flex justify-center mb-2 text-white space-x-4 flex-wrap">
+          <button
+            onClick={handleSelectAllChange}
+            className="bg-gray-500 text-white py-2 px-4 rounded-lg text-lg"
+          >
+            Select All
+          </button>
+          <button
+            onClick={handleUnselectAllChange}
+            className="bg-gray-500 text-white py-2 px-4 rounded-lg text-lg"
+          >
+            Unselect All
+          </button>
+        </div>
+        <div className="flex justify-center text-white space-x-4 flex-wrap">
+          {allProjects.map((project) => (
+            <button
+              key={project}
+              onClick={() => handleFilterChange(project)}
+              className={`mx-2 py-2 px-4 rounded-lg text-lg ${
+                selectedProjects.includes(project)
+                  ? "bg-green-500"
+                  : "bg-gray-500"
+              }`}
+            >
+              {project}
+            </button>
+          ))}
+        </div>
       </div>
 
       <VerticalTimeline>
@@ -117,16 +120,18 @@ const Timeline = () => {
                         />
                       </div>
                     }
-                    className="timeline-element sm:pl-10 "
+                    className="timeline-element sm:pl-10 md:pl-9 lg:pl-7"
                   >
                     {entry.content.map((item, idx) => (
                       <div key={idx}>
                         <h4 className="font-bold text-blue-600">{item.type}</h4>
                         <ul className="list-disc list-inside">
                           {item.details.map((detail, idy) => (
-                            <li key={idy} className="text-gray-700">
-                              {detail}
-                            </li>
+                            <li
+                              key={idy}
+                              className="text-gray-700"
+                              dangerouslySetInnerHTML={{ __html: detail }}
+                            ></li>
                           ))}
                         </ul>
                       </div>
