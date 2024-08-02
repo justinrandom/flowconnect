@@ -8,7 +8,7 @@ import Admin from "./components/Admin";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import FlowMosaic from "./components/FlowMosaic";
-import Timeline from "./components/Timeline";
+import FlowTimeline from "./components/FlowTimeline";
 import NavigationMenu from "./components/NavigationMenu";
 import BlogPosts from "./components/BlogPosts";
 
@@ -36,16 +36,11 @@ function App() {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      <Header
-        user={user}
-        logIn={logIn}
-        logOut={logOut}
-        toggleMenu={toggleMenu}
-      />
+      <Header user={user} logIn={logIn} logOut={logOut} />
       <NavigationMenu
         isMenuOpen={isMenuOpen}
-        toggleMenu={toggleMenu}
         user={user}
+        toggleMenu={toggleMenu}
         adminAddress={adminAddress}
       />
       <div
@@ -57,7 +52,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/" element={<Home />} />
           <Route path="/flow-mosaic" element={<FlowMosaic />} />
-          <Route path="/timeline" element={<Timeline />} />
+          <Route path="/flow-timeline" element={<FlowTimeline />} />
           <Route path="/blogposts" element={<BlogPosts />} />
         </Routes>
       </div>

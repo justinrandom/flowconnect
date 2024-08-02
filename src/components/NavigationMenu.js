@@ -33,7 +33,7 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
             className="block w-full px-4 py-2 rounded focus:outline-none flex flex-col items-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
             onClick={toggleMenu}
           >
-            <img src={FlowConnectLogo} alt="Flow Connect" className="h-8" />
+            <img src={FlowConnectLogo} alt="FlowConnect" className="h-8" />
             <span className="text-white mt-1">Home</span>
           </NavLink>
           <NavLink
@@ -41,14 +41,14 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
             className="block w-full px-4 py-2 rounded focus:outline-none flex justify-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
             onClick={toggleMenu}
           >
-            <img src={FlowMosaicLogo} alt="Flow Mosaic" className="h-8" />
+            <img src={FlowMosaicLogo} alt="FlowMosaic" className="h-8" />
           </NavLink>
           <NavLink
-            to="/timeline"
+            to="/flow-timeline"
             className="block w-full px-4 py-2 rounded focus:outline-none flex justify-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
             onClick={toggleMenu}
           >
-            <img src={FlowTimelineLogo} alt="Flow Timeline" className="h-8" />
+            <img src={FlowTimelineLogo} alt="FlowTimeline" className="h-8" />
           </NavLink>
 
           {user.loggedIn && user.addr === adminAddress && (

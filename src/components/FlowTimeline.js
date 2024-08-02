@@ -52,22 +52,22 @@ const Timeline = () => {
   return (
     <div className="bg-gray-300 p-3">
       <div className="flex justify-center mb-4">
-        <div className="bg-gray-700 border border-black p-2 rounded-lg">
-          <img src={FlowTimeline} alt="Flow Timeline" className="h-16" />
+        <div className="bg-gradient-to-r from-purple-900 to-green-500 border border-black p-2 rounded-lg">
+          <img src={FlowTimeline} alt="Flow Timeline" className="h-10" />
         </div>
       </div>
 
-      <div className="bg-gray-700 p-4 rounded-lg mb-5">
+      <div className="bg-gray-400 p-2 rounded-lg mb-2">
         <div className="flex justify-center mb-2 text-white space-x-2 flex-wrap">
           <button
             onClick={handleSelectAllChange}
-            className="bg-gray-500 text-white py-1 px-2 rounded-lg text-sm md:text-lg md:py-2 md:px-4 focus:outline-none"
+            className="bg-gray-500 text-white py-1 px-2 rounded-lg text-sm mb-2"
           >
             Select All
           </button>
           <button
             onClick={handleUnselectAllChange}
-            className="bg-gray-500 text-white py-1 px-2 rounded-lg text-sm md:text-lg md:py-2 md:px-4 focus:outline-none"
+            className="bg-gray-500 text-white py-1 px-2 rounded-lg text-sm mb-2"
           >
             Unselect All
           </button>
@@ -77,7 +77,7 @@ const Timeline = () => {
             <button
               key={project}
               onClick={() => handleFilterChange(project)}
-              className={`mx-1 py-1 px-2 rounded-lg text-sm md:text-lg md:py-2 md:px-4 focus:outline-none ${
+              className={`mx-2 my-2 py-1 px-2 rounded-lg text-sm ${
                 selectedProjects.includes(project)
                   ? "bg-green-500"
                   : "bg-gray-500"
@@ -102,8 +102,8 @@ const Timeline = () => {
                     date={date}
                     iconStyle={{
                       background,
-                      width: "80px",
-                      height: "80px",
+                      width: "60px",
+                      height: "60px",
                       borderRadius: "50%",
                       display: "flex",
                       alignItems: "center",
@@ -120,7 +120,7 @@ const Timeline = () => {
                         />
                       </div>
                     }
-                    className="timeline-element sm:pl-24 md:pl-8 lg:pl-7"
+                    className="timeline-element"
                   >
                     {entry.content.map((item, idx) => (
                       <div key={idx}>

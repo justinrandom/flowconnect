@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../FlowConnect.svg"; // Update with the actual path to the logo
 
-function Header({ user, logIn, logOut, toggleMenu }) {
+function Header({ user, logIn, logOut }) {
   return (
     <nav className="bg-gray-800 p-4 flex justify-between items-center">
       <NavLink to="/" className="flex flex-col items-center mx-auto">
-        <img src={Logo} alt="Flow Connect logo" className="h-14" />
+        <img src={Logo} alt="Flow Connect logo" className="h-7 sm:h-14" />
       </NavLink>
       <div className="flex items-center space-x-4">
         {user.loggedIn ? (
