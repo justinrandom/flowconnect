@@ -1,26 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import * as fcl from "@onflow/fcl";
 import Logo from "../FlowConnect.svg"; // Update with the actual path to the logo
 
 function Header({ user, logIn, logOut, toggleMenu }) {
   return (
     <nav className="bg-gray-800 p-4 flex justify-between items-center">
-      <button
-        onClick={toggleMenu}
-        className="px-4 py-2 bg-gray-700 text-gray-300 hover:text-white rounded focus:outline-none"
-      >
-        ☰
-      </button>
-      <NavLink to="/" className="text-4xl font-bold hover:underline">
-        <img src={Logo} alt="Nexus logo" className="h-14" />
+      <div className="flex items-center">
+        <button
+          onClick={toggleMenu}
+          className="px-4 py-2 bg-gray-700 text-gray-300 hover:text-white rounded focus:outline-none"
+        >
+          ☰
+        </button>
+      </div>
+      <NavLink to="/" className="flex flex-col items-center mx-auto">
+        <img src={Logo} alt="Flow Connect logo" className="h-14" />
       </NavLink>
       <div className="flex items-center space-x-4">
         {user.loggedIn ? (
           <>
             <div className="text-right">
-              <p>{user.addr}</p>
-              <p>Mainnet</p>
+              <p className="text-white">{user.addr}</p>
+              <p className="text-white">Mainnet</p>
             </div>
             <button
               onClick={logOut}

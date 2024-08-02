@@ -10,7 +10,7 @@ import evaluate from "../evaluate.png";
 import nflad from "../nflad.png";
 import wnbatopshot from "../wnbatopshot.png";
 import { contentByYear } from "./content";
-import FlowTimeline from "../FlowTimeline.png";
+import FlowTimeline from "../FlowTimeline.svg";
 
 const getIconDetails = (iconType) => {
   switch (iconType) {

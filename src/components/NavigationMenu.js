@@ -1,59 +1,67 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import FlowConnectLogo from "../FlowConnect.svg"; // Import FlowConnect logo
+import FlowMosaicLogo from "../FlowMosaic.svg";
+import FlowTimelineLogo from "../FlowTimeline.svg";
+
+const menuVariants = {
+  open: { x: 0 },
+  closed: { x: "-100%" },
+};
 
 function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
   return (
-    <div
-      className={`fixed inset-y-0 left-0 bg-gray-800 z-50 transform ${
-        isMenuOpen ? "translate-x-0" : "-translate-x-full"
-      } transition-transform duration-300 ease-in-out`}
-    >
-      <button
+    <div className="fixed inset-y-0 left-0 z-50">
+      <motion.button
         onClick={toggleMenu}
-        className="px-4 py-2 text-gray-300 hover:text-white focus:outline-none"
+        className="px-6 py-3 bg-gray-900 text-gray-100 hover:bg-gray-700 rounded-md focus:outline-none shadow-lg absolute top-4 left-4 z-50"
+        animate={isMenuOpen ? "open" : "closed"}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
-        ☰
-      </button>
-      <div className="flex flex-col p-4">
-        <NavLink
-          to="/"
-          className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
-          onClick={toggleMenu}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/flow-mosaic"
-          className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
-          onClick={toggleMenu}
-        >
-          FlowMosaic
-        </NavLink>
-        <NavLink
-          to="/timeline"
-          className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
-          onClick={toggleMenu}
-        >
-          Timeline
-        </NavLink>
-        <NavLink
-          to="/blogposts"
-          className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
-          onClick={toggleMenu}
-        >
-          Blog Posts
-        </NavLink>
-
-        {user.loggedIn && user.addr === adminAddress && (
+        ☰ Menu
+      </motion.button>
+      <motion.div
+        animate={isMenuOpen ? "open" : "closed"}
+        variants={menuVariants}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        className="bg-gray-800 transform top-0 left-0 h-full w-64 p-4 pt-24"
+      >
+        <div className="flex flex-col space-y-4">
           <NavLink
-            to="/admin"
-            className="block w-full px-4 py-2 text-white hover:text-gray-300 rounded focus:outline-none mb-2"
+            to="/"
+            className="block w-full px-4 py-2 rounded focus:outline-none flex flex-col items-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
             onClick={toggleMenu}
           >
-            Admin
+            <img src={FlowConnectLogo} alt="Flow Connect" className="h-8" />
+            <span className="text-white mt-1">Home</span>
           </NavLink>
-        )}
-      </div>
+          <NavLink
+            to="/flow-mosaic"
+            className="block w-full px-4 py-2 rounded focus:outline-none flex justify-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
+            onClick={toggleMenu}
+          >
+            <img src={FlowMosaicLogo} alt="Flow Mosaic" className="h-8" />
+          </NavLink>
+          <NavLink
+            to="/timeline"
+            className="block w-full px-4 py-2 rounded focus:outline-none flex justify-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
+            onClick={toggleMenu}
+          >
+            <img src={FlowTimelineLogo} alt="Flow Timeline" className="h-8" />
+          </NavLink>
+
+          {user.loggedIn && user.addr === adminAddress && (
+            <NavLink
+              to="/admin"
+              className="block w-full px-4 py-2 text-white rounded focus:outline-none border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
+              onClick={toggleMenu}
+            >
+              Admin
+            </NavLink>
+          )}
+        </div>
+      </motion.div>
     </div>
   );
 }
