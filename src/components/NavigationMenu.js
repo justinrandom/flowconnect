@@ -19,7 +19,7 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
         animate={isMenuOpen ? "open" : "closed"}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
-        ☰ Menu
+        ☰
       </motion.button>
       <motion.div
         animate={isMenuOpen ? "open" : "closed"}

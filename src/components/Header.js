@@ -5,14 +5,6 @@ import Logo from "../FlowConnect.svg"; // Update with the actual path to the log
 function Header({ user, logIn, logOut, toggleMenu }) {
   return (
     <nav className="bg-gray-800 p-4 flex justify-between items-center">
-      <div className="flex items-center">
-        <button
-          onClick={toggleMenu}
-          className="px-4 py-2 bg-gray-700 text-gray-300 hover:text-white rounded focus:outline-none"
-        >
-          ☰
-        </button>
-      </div>
       <NavLink to="/" className="flex flex-col items-center mx-auto">
         <img src={Logo} alt="Flow Connect logo" className="h-14" />
       </NavLink>

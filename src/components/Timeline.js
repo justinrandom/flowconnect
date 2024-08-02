@@ -58,26 +58,26 @@ const Timeline = () => {
       </div>
 
       <div className="bg-gray-700 p-4 rounded-lg mb-5">
-        <div className="flex justify-center mb-2 text-white space-x-4 flex-wrap">
+        <div className="flex justify-center mb-2 text-white space-x-2 flex-wrap">
           <button
             onClick={handleSelectAllChange}
-            className="bg-gray-500 text-white py-2 px-4 rounded-lg text-lg"
+            className="bg-gray-500 text-white py-1 px-2 rounded-lg text-sm md:text-lg md:py-2 md:px-4 focus:outline-none"
           >
             Select All
           </button>
           <button
             onClick={handleUnselectAllChange}
-            className="bg-gray-500 text-white py-2 px-4 rounded-lg text-lg"
+            className="bg-gray-500 text-white py-1 px-2 rounded-lg text-sm md:text-lg md:py-2 md:px-4 focus:outline-none"
           >
             Unselect All
           </button>
         </div>
-        <div className="flex justify-center text-white space-x-4 flex-wrap">
+        <div className="flex justify-center text-white space-x-2 flex-wrap">
           {allProjects.map((project) => (
             <button
               key={project}
               onClick={() => handleFilterChange(project)}
-              className={`mx-2 py-2 px-4 rounded-lg text-lg ${
+              className={`mx-1 py-1 px-2 rounded-lg text-sm md:text-lg md:py-2 md:px-4 focus:outline-none ${
                 selectedProjects.includes(project)
                   ? "bg-green-500"
                   : "bg-gray-500"
@@ -120,7 +120,7 @@ const Timeline = () => {
                         />
                       </div>
                     }
-                    className="timeline-element sm:pl-10 md:pl-9 lg:pl-7"
+                    className="timeline-element sm:pl-24 md:pl-8 lg:pl-7"
                   >
                     {entry.content.map((item, idx) => (
                       <div key={idx}>
