@@ -12,10 +12,12 @@ const menuVariants = {
 
 function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
   return (
-    <div className="fixed inset-y-0 left-0 z-50">
+    <>
       <motion.button
         onClick={toggleMenu}
-        className="px-6 py-3 bg-gray-900 text-gray-100 hover:bg-gray-700 rounded-md focus:outline-none shadow-lg absolute top-4 left-4 z-50"
+        className={`px-6 py-3 bg-gray-900 text-gray-100 hover:bg-gray-700 rounded-md focus:outline-none shadow-lg ${
+          isMenuOpen ? "fixed" : "absolute"
+        } top-4 left-4 z-50`}
         animate={isMenuOpen ? "open" : "closed"}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
@@ -25,7 +27,7 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
         animate={isMenuOpen ? "open" : "closed"}
         variants={menuVariants}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        className="bg-gray-800 transform top-0 left-0 h-full w-64 p-4 pt-24"
+        className="bg-gray-800 fixed top-0 left-0 h-full w-64 p-4 pt-24 z-40"
       >
         <div className="flex flex-col space-y-4">
           <NavLink
@@ -62,7 +64,7 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
           )}
         </div>
       </motion.div>
-    </div>
+    </>
   );
 }
 

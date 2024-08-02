@@ -2,7 +2,6 @@ To run the deploy to github pages script
 npm run deploy
 
 ToDo
-
 smart contract
 
 - add ability to update mosaic metadata
