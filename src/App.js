@@ -11,6 +11,8 @@ import FlowMosaic from "./components/FlowMosaic";
 import FlowTimeline from "./components/FlowTimeline";
 import NavigationMenu from "./components/NavigationMenu";
 import BlogPosts from "./components/BlogPosts";
+import Footer from "./components/Footer";
+import FlowCommunities from "./components/FlowCommunities";
 
 const adminAddress = "0xdbf7a2a1821c9ffa"; // Replace with your actual admin address
 
@@ -53,9 +55,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/flow-mosaic" element={<FlowMosaic />} />
           <Route path="/flow-timeline" element={<FlowTimeline />} />
+          <Route path="/flow-communities" element={<FlowCommunities />} />
           <Route path="/blogposts" element={<BlogPosts />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

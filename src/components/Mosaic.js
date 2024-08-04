@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getMosaicDetails, getBatchNFTDetails } from "../flow/scripts";
 import Draggable from "react-draggable";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import FlowMosaic from "../FlowMosaic.svg";
 
 function Mosaic() {
   const [mosaicDetails, setMosaicDetails] = useState(null);
@@ -95,8 +96,10 @@ function Mosaic() {
   }
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">FlowMosaic</h2>
+    <div className="p-3">
+      <div className="bg-gradient-to-r from-purple-900 to-green-500 border border-black p-2 rounded-lg">
+        <img src={FlowMosaic} alt="FlowMosaic" className="h-10" />
+      </div>
       <div
         className="relative border-4 border-gray-700 bg-white overflow-hidden"
         style={{ height: "640px", width: "100%", maxWidth: "1280px" }}

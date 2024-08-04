@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import FlowConnectLogo from "../FlowConnect.svg"; // Import FlowConnect logo
 import FlowMosaicLogo from "../FlowMosaic.svg";
 import FlowTimelineLogo from "../FlowTimeline.svg";
+import FlowCommunitiesLogo from "../FlowCommunities.svg";
 
 const menuVariants = {
   open: { x: 0 },
@@ -51,6 +52,17 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
             onClick={toggleMenu}
           >
             <img src={FlowTimelineLogo} alt="FlowTimeline" className="h-8" />
+          </NavLink>
+          <NavLink
+            to="/flow-communities"
+            className="block w-full px-4 py-2 rounded focus:outline-none flex justify-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
+            onClick={toggleMenu}
+          >
+            <img
+              src={FlowCommunitiesLogo}
+              alt="FlowCommunities"
+              className="h-8"
+            />
           </NavLink>
 
           {user.loggedIn && user.addr === adminAddress && (

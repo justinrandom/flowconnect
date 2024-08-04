@@ -51,10 +51,8 @@ const Timeline = () => {
 
   return (
     <div className="bg-gray-300 p-3">
-      <div className="flex justify-center mb-4">
-        <div className="bg-gradient-to-r from-purple-900 to-green-500 border border-black p-2 rounded-lg">
-          <img src={FlowTimeline} alt="Flow Timeline" className="h-10" />
-        </div>
+      <div className="bg-gradient-to-r from-purple-900 to-green-500 border border-black p-2 rounded-lg">
+        <img src={FlowTimeline} alt="Flow Timeline" className="h-10" />
       </div>
 
       <div className="bg-gray-400 p-2 rounded-lg mb-2">
