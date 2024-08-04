@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b7d8a75.css",
-    "main.js": "/static/js/main.117f853c.js",
+    "main.css": "/static/css/main.37519d0d.css",
+    "main.js": "/static/js/main.350c8f0f.js",
     "static/js/643.734c9abe.chunk.js": "/static/js/643.734c9abe.chunk.js",
     "static/js/511.440a9e3e.chunk.js": "/static/js/511.440a9e3e.chunk.js",
     "static/js/657.1396aa8d.chunk.js": "/static/js/657.1396aa8d.chunk.js",
     "static/media/nba.png": "/static/media/nba.fb65b6aa3a203cca2dd7.png",
     "static/media/topshot.png": "/static/media/topshot.7cae3473ad84f95c8581.png",
+    "static/media/FlowCommunities.svg": "/static/media/FlowCommunities.b1e39960f2c4cac4153ea305af2d6e80.svg",
     "static/media/FlowConnect.svg": "/static/media/FlowConnect.b9b7d13efec442c5e498c51ad116f073.svg",
     "static/media/FlowMosaic.svg": "/static/media/FlowMosaic.ae02282b547a75a888435362c344997b.svg",
     "static/media/nflad.png": "/static/media/nflad.22b51fb67e642d3eeee4.png",
     "static/media/FlowTimeline.svg": "/static/media/FlowTimeline.f6da5222dacc89732508146e38f96196.svg",
+    "static/media/openai.svg": "/static/media/openai.a5b55927027e799185ee986194477835.svg",
+    "static/media/flow.svg": "/static/media/flow.ec25cc7494a994da6501af02fdbfb0b6.svg",
     "index.html": "/index.html",
-    "main.2b7d8a75.css.map": "/static/css/main.2b7d8a75.css.map",
-    "main.117f853c.js.map": "/static/js/main.117f853c.js.map",
+    "main.37519d0d.css.map": "/static/css/main.37519d0d.css.map",
+    "main.350c8f0f.js.map": "/static/js/main.350c8f0f.js.map",
     "643.734c9abe.chunk.js.map": "/static/js/643.734c9abe.chunk.js.map",
     "511.440a9e3e.chunk.js.map": "/static/js/511.440a9e3e.chunk.js.map",
     "657.1396aa8d.chunk.js.map": "/static/js/657.1396aa8d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b7d8a75.css",
-    "static/js/main.117f853c.js"
+    "static/css/main.37519d0d.css",
+    "static/js/main.350c8f0f.js"
   ]
 }
