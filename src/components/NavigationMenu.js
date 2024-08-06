@@ -5,6 +5,7 @@ import FlowConnectLogo from "../FlowConnect.svg"; // Import FlowConnect logo
 import FlowMosaicLogo from "../FlowMosaic.svg";
 import FlowTimelineLogo from "../FlowTimeline.svg";
 import FlowCommunitiesLogo from "../FlowCommunities.svg";
+import FlowAnalyticsLogo from "../FlowAnalytics.svg";
 
 const menuVariants = {
   open: { x: 0 },
@@ -63,6 +64,14 @@ function NavigationMenu({ isMenuOpen, toggleMenu, user, adminAddress }) {
               alt="FlowCommunities"
               className="h-8"
             />
+          </NavLink>
+
+          <NavLink
+            to="/flow-analytics"
+            className="block w-full px-4 py-2 rounded focus:outline-none flex justify-center border border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition"
+            onClick={toggleMenu}
+          >
+            <img src={FlowAnalyticsLogo} alt="FlowAnalytics" className="h-8" />
           </NavLink>
 
           {user.loggedIn && user.addr === adminAddress && (
